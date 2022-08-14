@@ -71,7 +71,11 @@ class App extends React.Component {
       <div className = "App">
         {
           heroes.map((hero) =>
-            <Hero name={hero.name} alter_ego={hero.alter_ego} superpowers={hero.superpowers} url={hero.url} description={hero.description}></Hero>
+            <Hero name={hero.name} 
+                  alter_ego={hero.alter_ego}  
+                  superpowers={hero.superpowers} 
+                  url={hero.url} 
+                  description={hero.description}></Hero>
           )
         }
       </div>
