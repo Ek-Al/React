@@ -1,3 +1,5 @@
+import './styles.scss'
+
 function Word(props) {
     return (
         <div className="word-id">

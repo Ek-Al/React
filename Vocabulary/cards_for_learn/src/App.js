@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/main.css';
 import React from 'react';
 import Word from './card/card';
 
