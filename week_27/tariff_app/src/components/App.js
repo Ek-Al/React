@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import '../styles/App.css';
 import Card from './Card';
 
@@ -36,23 +36,22 @@ const cards = [{
   isChecked: false,
 }];
 
-export default function App() {
-  const [currentData, setCurrentData] = useState(cards);
-
-const handleClick = (id) => {
-  setCurrentData(prevState => prevState.map(card => card.id === id ? ({ ...card, isChecked: true }) : ({ ...card, isChecked: false })))
-};
-
-
+class App extends React.Component {
+  render() {
     return ( 
       <div className = "App">
-        <div className="cardsFlex">
-            {
-            currentData.map(card =>
-                <Card {...card} key = {card.id} onClick={handleClick}></Card>
-            )
-          }
-        </div>
+        {
+          cards.map((card) =>
+            <Card id={card.id} 
+                  name={card.name}  
+                  price={card.price} 
+                  mbit={card.mbit} 
+                  text={card.text}></Card>
+          )
+        }
       </div>
     );
   }
+}
+
+export default App;
